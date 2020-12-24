@@ -9,7 +9,7 @@ jest.mock("./database")
 beforeEach(() => jest.clearAllMocks())
 
 describe("Event buffer test suite", () => {
-  test("flushes after 5000 thousand events", async () => {
+  test("flushes after 5000 events", async () => {
     const events = Array.from({ length: 5000 }, () => ({
       name: "event_name",
       view: "some_view",

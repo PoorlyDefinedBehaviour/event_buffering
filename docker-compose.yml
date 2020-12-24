@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  postgres_dev:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=event_buffer
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgres
+    networks:
+      - event_buffer
+
+volumes:
+  postgres_data:
+
+networks:
+  event_buffer:
+    driver: bridge
